@@ -1,0 +1,38 @@
+.SignUp-Container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .SignUp-SubContainer {
+    height: 70%;
+    width: 450px;
+    border: 0.5px solid lightgray;
+
+    .Header {
+      height: 15%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto";
+      font-size: 25px;
+      font-weight: 500;
+      color: blue;
+    }
+
+    .Body {
+      height: 70%;
+      width: 100%;
+
+      .form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+}
