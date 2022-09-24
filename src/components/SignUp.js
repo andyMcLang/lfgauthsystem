@@ -4,6 +4,23 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 export default class SignUp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      Email: "",
+      Password: "",
+      ConfirmPassword: "",
+      EmailFlag: false,
+      PasswordFlag: false,
+      ConfirmPasswordFlag: false,
+    };
+  }
+
+  handleValues = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
     return (
       <div className="SignUp-Container">
@@ -12,22 +29,34 @@ export default class SignUp extends Component {
           <div className="Body">
             <form className="form">
               <TextField
+                error={this.state.EmailFlag}
                 className="TextField"
-                label="Username"
+                name="Email"
+                label="Email"
                 variant="outlined"
                 size="small"
+                value={this.state.Email}
+                onChange={this.handleValues}
               />
               <TextField
+                error={this.state.PasswordFlag}
                 className="TextField"
+                name="Password"
                 label="Password"
                 variant="outlined"
                 size="small"
+                value={this.state.Password}
+                onChange={this.handleValues}
               />
               <TextField
+                error={this.state.ConfirmPasswordFlag}
                 className="TextField"
+                name="ConfirmPassword"
                 label="Confirm Password"
                 variant="outlined"
                 size="small"
+                value={this.state.ConfirmPassword}
+                onChange={this.handleValues}
               />
             </form>
           </div>
