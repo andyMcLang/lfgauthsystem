@@ -8,6 +8,7 @@
     height: 70%;
     width: 450px;
     border: 0.5px solid lightgray;
+    border-radius: 10px;
 
     .Header {
       height: 15%;
@@ -32,7 +33,28 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        .TextField {
+          width: 300px;
+          margin: 20px;
+        }
       }
     }
+
+    .buttons {
+      height: 15%;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .Btn {
+        text-transform: none;
+      }
+    }
+  }
+
+  .SignUp-SubContainer:hover {
+    box-shadow: 0 0 5px -2px black;
   }
 }

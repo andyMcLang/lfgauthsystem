@@ -1,8 +1,7 @@
-// https://youtu.be/UrPsLzOvxsY
-// kohta 1:28:42
 import React, { Component } from "react";
 import "./SignUp.scss";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export default class SignUp extends Component {
   render() {
@@ -32,7 +31,14 @@ export default class SignUp extends Component {
               />
             </form>
           </div>
-          <div className="buttons"></div>
+          <div className="buttons">
+            <Button className="Btn" color="primary">
+              Sign In
+            </Button>
+            <Button className="Btn" variant="contained" color="primary">
+              Sign Up
+            </Button>
+          </div>
         </div>
       </div>
     );
