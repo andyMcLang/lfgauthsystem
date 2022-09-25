@@ -3,6 +3,8 @@ import "./SignUp.scss";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
+
+
 export default class SignUp extends Component {
   constructor() {
     super();
@@ -16,12 +18,42 @@ export default class SignUp extends Component {
     };
   }
 
+
+
   handleValues = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
-  };
+    this.setState({ [name]: value }, console.log('name', name, 'value', value))
+  }
+
+
+
+
+
+  CheckValidity=()=> {
+    console.log('CheckValidity Calling...')
+      this.setState({
+        EmailFlag:false,
+        PasswordFlag:false,
+        ConfirmPasswordFlag:false,
+      })
+
+      if (this.state.Email === '') {
+        this.setState({ EmailFlag: true })
+      }
+      if (this.state.Password === '') {
+        this.setState({ PasswordFlag: true })
+      }
+      if (this.state.ConfirmPassword === '') {
+        this.setState({ ConfirmPasswordFlag: true })
+      }    
+  }
+
+  handleSubmit = e => {
+    this.CheckValidity()
+  }
 
   render() {
+    console.log('State : ', this.state)
     return (
       <div className="SignUp-Container">
         <div className="SignUp-SubContainer">
@@ -45,6 +77,7 @@ export default class SignUp extends Component {
                 label="Password"
                 variant="outlined"
                 size="small"
+                type="password"
                 value={this.state.Password}
                 onChange={this.handleValues}
               />
@@ -55,16 +88,41 @@ export default class SignUp extends Component {
                 label="Confirm Password"
                 variant="outlined"
                 size="small"
+                type="password"
                 value={this.state.ConfirmPassword}
                 onChange={this.handleValues}
               />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             </form>
           </div>
           <div className="buttons">
             <Button className="Btn" color="primary">
               Sign In
             </Button>
-            <Button className="Btn" variant="contained" color="primary">
+            <Button 
+            className="Btn" 
+            variant="contained" 
+            color="primary" 
+            onClick={this.handleSubmit}
+            >
               Sign Up
             </Button>
           </div>
