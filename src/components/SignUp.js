@@ -51,6 +51,12 @@ export default class SignUp extends Component {
       this.state.ConfirmPassword !== ""
     ) {
       console.log("Acceptable");
+
+      let data = {
+        email: this.state.Email,
+        password: this.state.Password,
+        confirmPassword: this.state.ConfirmPassword,
+      };
     } else {
       console.log("Not Acceptable");
     }
