@@ -8,7 +8,7 @@ import SignIn from "./components/SignIn";
 import HomePage from "./components/HomePage";
 import { version } from "react";
 
-console.log(version);
+console.log(`react version: ${version}`);
 
 function App() {
   return (
