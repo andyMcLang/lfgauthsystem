@@ -57,6 +57,15 @@ export default class SignUp extends Component {
         password: this.state.Password,
         confirmPassword: this.state.ConfirmPassword,
       };
+
+      authService
+        .SignUp(data)
+        .then((data) => {
+          console.log("data : ", data);
+        })
+        .catch((error) => {
+          console.log("Error : ", error);
+        });
     } else {
       console.log("Not Acceptable");
     }
