@@ -1,5 +1,5 @@
 // https://youtu.be/UrPsLzOvxsY
-// kohta: 1:59:51
+// kohta: 2:08:17
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
