@@ -48,8 +48,14 @@ export default class SignUp extends Component {
       }    
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     this.CheckValidity()
+    if(
+      this.state.Email != '' &&
+      this.state.Password  != '' &&
+      this.state.ConfirmPassword != ''
+      ) {
+    }
   }
 
   render() {
