@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import HomePage from "./components/HomePage";
+import { version } from "react";
+
+console.log(version);
 
 function App() {
   return (

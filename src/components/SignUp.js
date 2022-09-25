@@ -3,6 +3,9 @@ import "./SignUp.scss";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import AuthService from "../services/AuthServices";
+//
+//
+//
 
 const authService = new AuthService();
 
@@ -18,11 +21,16 @@ export default class SignUp extends Component {
       ConfirmPasswordFlag: false,
     };
   }
+  //
 
   handleValues = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value }, console.log("name", name, "value", value));
   };
+  //
+  //
+  //
+  //
 
   CheckValidity = () => {
     console.log("CheckValidity Calling...");
@@ -62,6 +70,12 @@ export default class SignUp extends Component {
         .SignUp(data)
         .then((data) => {
           console.log("data : ", data);
+          if (data.data.isSuccess) {
+            this.props.history.push("/SignIn");
+            window.location.reload();
+          } else {
+            console.log("Something went wrong");
+          }
         })
         .catch((error) => {
           console.log("Error : ", error);
@@ -69,6 +83,11 @@ export default class SignUp extends Component {
     } else {
       console.log("Not Acceptable");
     }
+  };
+
+  handleSignIn = (e) => {
+    this.props.history.push("/SignIn");
+    window.location.reload();
   };
 
   render() {
@@ -114,7 +133,7 @@ export default class SignUp extends Component {
             </form>
           </div>
           <div className="buttons">
-            <Button className="Btn" color="primary">
+            <Button className="Btn" color="primary" onClick={this.handleSignIn}>
               Sign In
             </Button>
             <Button
