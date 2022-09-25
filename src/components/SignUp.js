@@ -51,10 +51,13 @@ export default class SignUp extends Component {
   handleSubmit = (e) => {
     this.CheckValidity()
     if(
-      this.state.Email != '' &&
-      this.state.Password  != '' &&
-      this.state.ConfirmPassword != ''
+      this.state.Email !== '' &&
+      this.state.Password  !== '' &&
+      this.state.ConfirmPassword !== ''
       ) {
+        console.log('Acceptable')
+    } else {
+      console.log('Not Acceptable')
     }
   }
 
